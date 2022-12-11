@@ -47,7 +47,7 @@ export const mainListItems = (
       <ListItemIcon>
         <EvStationIcon />
       </ListItemIcon>
-      <ListItemText primary="Vehicle Expenditure" onClick={()=>{
+      <ListItemText primary="Player Registration" onClick={()=>{
         window.open("/VehicleControl", "_self");
       }}/>
     </ListItem>
