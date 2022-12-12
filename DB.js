@@ -7,11 +7,11 @@ let connection = await MongoClient.connect("mongodb://localhost:27017/", {
 	useUnifiedTopology: true,
 });
 
-const DB = connection.db("roadtrip");
+const DB = connection.db("Gymnast");
 
 const userCollection = "User";
 
-const vehicleCollection="Vehicle"
+const vehicleCollection="Player"
 
 
 export default DB;

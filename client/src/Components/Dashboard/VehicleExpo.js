@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import QRCode from "qrcode.react";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { Button, Container } from "@material-ui/core";
+import {Select} from "@material-ui/core";
+import {MenuItem} from "@material-ui/core";
 const API_URL = "http://localhost:3001";
 
 
@@ -21,56 +23,100 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Orders() {
 
-  const [handleShow, sethandleShow] = useState(true);
+
   const [vname, SetVname] = useState([]);
   const [vnum, SetVnum] = useState([]);
   const [distance, SetDistance] = useState([]);
-  const [mileage, SetMileage] = useState([]);
-  const [petrol, SetPetrol] = useState(false);
-  const [diesel, SetDiesel] = useState(false);
+  const [Sex, SetSex] = useState([]);
+  const [Age, SetAgeG] = useState([]);
+  const [District, SetDistrict] = useState([]);
+  const [Discipline, SetDiscipline] = useState([]);
+  const [Yes, SetYes] = useState(true);
+  const [No, SetNo] = useState(false);
   const [expense, SetExpense] = useState([]);
   const [checking,Setchecking] = useState(false)
+  const [ButtonChecker,SetButtonCheck] = useState(false)
+  const [mileage, SetMileage] = useState([]);
+  
+  const courses = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli",
+  "Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","MumbaiCity","MumbaiSubUrban","Nagpur","Nanded","Nandurbar","Nashik",
+  "Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim"
+  ,"Yavatmal"]
 
   const classes = useStyles();
 
   const Calculate = async (e) => {
+    SetButtonCheck(true);
     const check= ActualCalculate();
     Setchecking(check);
+
+
     if(checking){
 
       let response = await axios.post(`${API_URL}/api/vehicleexpense`, {
 
-        vname: vname,
-        vnum: vnum,
-        distance: distance,
-        mileage: mileage,
-        petrol: petrol,
-        diesel: diesel,
-        expense:expense
+        name: vname,
+        dob: vnum,
+        AgeGroup: Age,
+        Sex: Sex,
+        AddList: Yes,
+        District:District,
+        Discipline:Discipline
       });
       console.log(response)
+      if(response.data.success == true){
+        alert("Record Saved Successfully")
+        SetVname("");
+        SetVnum("");
+        SetSex("");
+        SetAgeG("");
+        SetDistrict("");
+        SetDiscipline("");
+        SetYes("");
+        SetButtonCheck(false);
+      }else{
+        alert("Record Saving Failed")
+        SetButtonCheck(false);
+      }
     }
   }
 
   const ActualCalculate = () => {
-    let expense = {};
-    let Fuel = {};
-    let ExpenseCalculate = {};
-    let isvalid = true
 
-    if (petrol) {
-      console.log("im petrol")
-      ExpenseCalculate = 104.90
-    }
-    else {
-      ExpenseCalculate = 96.72
-    }
-    Fuel = distance / mileage;
-    expense = Fuel * ExpenseCalculate;
+     let isvalid = false
 
-    SetExpense(expense)
-    console.log(expense)
-    return isvalid;
+    if(vname == ""){
+      alert("Please Fill Name");
+      return isvalid;
+    }
+    else if(vnum == ""){
+      alert("Please Select DOB");
+      return isvalid;
+    }
+    else if(Age == 0){
+      alert("Please Select Age Group");
+      return isvalid;
+    }
+    else if (Sex == ""){
+      alert("Please Select Sex");
+      return isvalid;
+    }
+    else if(District == ""){
+      alert("Please Select District");
+      return isvalid;
+    }
+    else if (Discipline == ""){
+      alert("Please Select Discipline");
+      return isvalid;
+    }
+    else if (Yes == ""){
+      alert("Please Select if You want to Add to List");
+      return isvalid;
+    }else{
+      isvalid = true;
+      return isvalid;
+    }
+    
 
   }
 
@@ -83,7 +129,7 @@ export default function Orders() {
               className="section-title aos-init aos-animate"
               data-aos="fade-up"
             >
-              <h2>Vehicle Expenditure</h2>
+              <h2>Player Registration</h2>
             </div>
             <div>
               <div
@@ -95,11 +141,11 @@ export default function Orders() {
 
                   <div className="row">
                     <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Enter Your Vehicle Name:</label>
+                      <label>Player's Name:</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Vehicle Name"
+                        placeholder="Enter Your Name:"
                         required=""
                         value={vname}
                         onChange={(event) => {
@@ -109,11 +155,11 @@ export default function Orders() {
                     </div>
 
                     <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Enter Your Vehicle Number:</label>
+                      <label>DOB :</label>
                       <input
-                        type="text"
+                        type="date"
                         className="form-control"
-                        placeholder="Vehicle  Number"
+                        placeholder="Enter DOB"
                         required=""
                         value={vnum}
                         onChange={(event) => {
@@ -125,86 +171,125 @@ export default function Orders() {
 
                   <div className="row">
                     <div className="col-md-6 form-group">
-                      <label>Enter Your Trip's Distance:</label>
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Your Distance"
-                        required=""
-                        value={distance}
+                      <label>Age Group</label>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        style={{width:"280px"}}
+                        value={Age}
+                        label="AgeGroup"
                         onChange={(event) => {
-                          SetDistance(event.target.value);
+                          SetAgeG(event.target.value);
                         }}
-                      />
+                      >
+                        <MenuItem value={10}>Under 10</MenuItem>
+                        <MenuItem value={12}>Under 12</MenuItem>
+                        <MenuItem value={14}>Under 14</MenuItem>
+                        <MenuItem value={17}>Under 17</MenuItem>
+                        <MenuItem value={21}>Seniors</MenuItem>
+                      </Select>
                     </div>
 
                     <div className="col-md-6 form-group">
-                      <label>Enter Your Vehicle's Mileage:</label>
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Your Mileage"
-                        required=""
-                        value={mileage}
+                      <label>Sex:</label><br></br>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        style={{width:"280px"}}
+                        value={Sex}
+                        label="Sex"
                         onChange={(event) => {
-                          SetMileage(event.target.value);
+                          SetSex(event.target.value);
                         }}
-                      />
+                      >
+                        <MenuItem value={"Male"}>Male</MenuItem>
+                        <MenuItem value={"Female"}>Female</MenuItem>
+                        <MenuItem value={"Others"}>Others</MenuItem>
+                      </Select>
                     </div>
+
+                    
 
 
                   </div>
-                  <div className="row">
-                    <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Select Fuel Type</label>
-                      <BootstrapSwitchButton
-                        checked={petrol}
-                        onlabel="Petrol"
-                        onstyle="success"
-                        offlabel="Diesel"
-                        offstyle="danger"
-                        style="w-50 mx-3"
-                        onChange={(checked) => {
-                          if (checked) {
-                            SetPetrol(true);
-                            console.log("petrol", petrol)
-                            SetDiesel(false);
 
-                          } else {
-                            SetDiesel(true);
-                            console.log("diesel", diesel)
-                            SetPetrol(false);
-
-                          }
-                        }}
-                      />
-                    </div>
-
-                  </div>
 
                   <div className="row">
-
-                    <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Petrol Price: 104.90 per Litre</label>
-                      <p></p>
+                    <div className="col-md-6 form-group">
+                      <label>District</label><br></br>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        style={{width:"280px"}}
+                        value={District}
+                        label="District"
+                        onChange={(event) => {
+                          SetDistrict(event.target.value);
+                        }}
+                      >
+                        {courses.map((course, index) => {
+                          return (
+                            <MenuItem key={index} value={course}>{course}</MenuItem>
+                          )
+                        })}
+                      </Select>
                     </div>
 
+                    <div className="col-md-6 form-group">
+                      <label>Gymnastics Discipline:</label>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        style={{width:"280px"}}
+                        value={Discipline}
+                        label="Discipline"
+                        onChange={(event) => {
+                          SetDiscipline(event.target.value);
+                        }}
+                      >
+                        <MenuItem value={"Artistic"}>Artistic</MenuItem>
+                        <MenuItem value={"Rythmic"}>Rythmic</MenuItem>
+                        <MenuItem value={"Aerobic"}>Aerobic</MenuItem>
+                        <MenuItem value={"Artistic"}>Acrobatic</MenuItem>
+                        <MenuItem value={"TAT"}>Tumbling and Trampoline</MenuItem>
+                        <MenuItem value={"Parckour"}>Parckour</MenuItem>
+                      </Select>
+                    </div>
 
+                  
+                  </div>
+
+
+                  <div className="row">
                     <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Diesel Price: 96.72 per Litre</label>
-                      <p></p>
+                      <label>Add To List</label>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        style={{width:"280px"}}
+                        value={Yes}
+                        label="AddList"
+                        onChange={(event) => {
+                          SetYes(event.target.value);
+                        }}
+                      >
+                        <MenuItem value={"Yes"}>Yes</MenuItem>
+                        <MenuItem value={"No"}>No</MenuItem>
+                      </Select>
                     </div>
 
                   </div>
+
 
                   <button
                     type="submit"
                     className="btn-dark"
+                    
                     onClick={() => {
                       Calculate();
                     }}
                   >
-                    Calculate
+                    Register
                     </button>
 
                 </div>
@@ -214,31 +299,7 @@ export default function Orders() {
         </section>
       </center>
 
-      <Container>
-      <Row md={4}>
-        <Col>
-        </Col>
-        <Col md={4}>
-        <label>Expense:</label>
-              <p>{expense}</p>
-        </Col>
-      </Row>
-      
-                  
-        <center>
-        <div className="php-email-form">
-              
-       
-          
 
-
-					<div className="text-center">
-						<QRCode id="9423661150" value={`${expense}-Rs`} size={290} level={"H"} includeMargin={true} />
-					
-					</div>
-          </div>
-        </center>
-        </Container>
 
     
     </React.Fragment>
