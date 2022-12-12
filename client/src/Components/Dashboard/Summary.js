@@ -52,12 +52,13 @@ export default function Summary() {
   const { ExportCSVButton } = CSVExport;
 
   const pending = [
-    { dataField: "vname", text: "Vehicle Name", sort: true, filter: textFilter(), footer: "" },
-    { dataField: "vnum", text: "Vehicle Number", sort: true, filter: textFilter(), footer: "", },
-    { dataField: "mileage", text: "Mileage", sort: true, filter: textFilter(), footer: "", },
-    { dataField: "petrol", text: "Petrol", sort: true, filter: textFilter(), footer: "", },
-    { dataField: "diesel", text: "Diesel", sort: true, filter: textFilter(), footer: "", },
-    { dataField: "expense", text: "Expense", sort: true, filter: textFilter(), footer: "", },
+    { dataField: "name", text: "Name", sort: true, filter: textFilter(), footer: "" ,editable: false},
+    { dataField: "dob", text: "Date Of Birth", sort: true, filter: textFilter(), footer: "",editable: false },
+    { dataField: "AgeGroup", text: "Under AgeGroup", sort: true, filter: textFilter(), footer: "", editable: false},
+    { dataField: "Sex", text: "Sex", sort: true, filter: textFilter(), footer: "",editable: false },
+    { dataField: "District", text: "District", sort: true, filter: textFilter(), footer: "", editable: false},
+    { dataField: "Discipline", text: "Discipline", sort: true, filter: textFilter(), footer: "", editable: false},
+    { dataField: "AddList", text: "AddList", sort: true, filter: textFilter(), footer: "", },
   ];
   const defaultSorted = [
     {
@@ -125,8 +126,20 @@ export default function Summary() {
                                   columnIndex
                                 ) => {
                                   console.log(
-                                    "start to edit!!!",
+                                    "row",
                                     row
+                                  );
+                                  console.log(
+                                    "column",
+                                    column
+                                  );
+                                  console.log(
+                                    "rowIndex",
+                                    rowIndex
+                                  );
+                                  console.log(
+                                    "columnIndex",
+                                    columnIndex
                                   );
                                 },
                                 afterSaveCell: (

@@ -93,7 +93,7 @@ export default function Orders() {
       alert("Please Select DOB");
       return isvalid;
     }
-    else if(Age == 0){
+    else if(Age == ""){
       alert("Please Select Age Group");
       return isvalid;
     }
@@ -182,11 +182,11 @@ export default function Orders() {
                           SetAgeG(event.target.value);
                         }}
                       >
-                        <MenuItem value={10}>Under 10</MenuItem>
-                        <MenuItem value={12}>Under 12</MenuItem>
-                        <MenuItem value={14}>Under 14</MenuItem>
-                        <MenuItem value={17}>Under 17</MenuItem>
-                        <MenuItem value={21}>Seniors</MenuItem>
+                        <MenuItem value={"10"}>Under 10</MenuItem>
+                        <MenuItem value={"12"}>Under 12</MenuItem>
+                        <MenuItem value={"14"}>Under 14</MenuItem>
+                        <MenuItem value={"17"}>Under 17</MenuItem>
+                        <MenuItem value={"S"}>Seniors</MenuItem>
                       </Select>
                     </div>
 
@@ -250,7 +250,7 @@ export default function Orders() {
                         <MenuItem value={"Artistic"}>Artistic</MenuItem>
                         <MenuItem value={"Rythmic"}>Rythmic</MenuItem>
                         <MenuItem value={"Aerobic"}>Aerobic</MenuItem>
-                        <MenuItem value={"Artistic"}>Acrobatic</MenuItem>
+                        <MenuItem value={"Acrobatic"}>Acrobatic</MenuItem>
                         <MenuItem value={"TAT"}>Tumbling and Trampoline</MenuItem>
                         <MenuItem value={"Parckour"}>Parckour</MenuItem>
                       </Select>

@@ -11,6 +11,10 @@ import AirlineSeatIndividualSuiteIcon from '@material-ui/icons/AirlineSeatIndivi
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HowToReg from '@material-ui/icons/HowToReg';
+import Add from '@material-ui/icons/Add';
+import SportsCricket from '@material-ui/icons/SportsCricket';
+
 
 export const mainListItems = (
   <div>
@@ -35,25 +39,47 @@ export const mainListItems = (
 
     <ListItem button>
       <ListItemIcon>
-        <RoomIcon />
-      </ListItemIcon>
-      <ListItemText primary="Shortest Route" onClick={()=>{
-        window.open("/ShortestControl", "_self");
-      }}/>
-    </ListItem>
-
-
-    <ListItem button>
-      <ListItemIcon>
-        <EvStationIcon />
+        <HowToReg />
       </ListItemIcon>
       <ListItemText primary="Player Registration" onClick={()=>{
         window.open("/VehicleControl", "_self");
       }}/>
     </ListItem>
 
+    <ListItem button>
+      <ListItemIcon>
+        <Add />
+      </ListItemIcon>
+      <ListItemText primary="Add To List" onClick={()=>{
+        window.open("/SummaryControl", "_self");
+      }}/>
+    </ListItem>
 
     <ListItem button>
+      <ListItemIcon>
+        <SportsCricket />
+      </ListItemIcon>
+      <ListItemText primary="Competition Master" onClick={()=>{
+        window.open("/ShortestControl", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <ListItemText primary="Logout" onClick={()=>{
+        window.open("/login", "_self");
+      }}/>
+    </ListItem>
+
+    
+
+
+
+
+
+    {/* <ListItem button>
       <ListItemIcon>
         <AirlineSeatIndividualSuiteIcon />
       </ListItemIcon>
@@ -70,16 +96,9 @@ export const mainListItems = (
       <ListItemText primary="Classification" onClick={()=>{
         window.open("/dashboard", "_self");
       }}/>
-    </ListItem>
+    </ListItem> */}
 
-    <ListItem button>
-      <ListItemIcon>
-        <ExitToAppIcon />
-      </ListItemIcon>
-      <ListItemText primary="Logout" onClick={()=>{
-        window.open("/login", "_self");
-      }}/>
-    </ListItem>
+
   </div>
 );
 
