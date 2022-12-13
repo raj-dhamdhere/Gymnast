@@ -13,11 +13,17 @@ const userCollection = "User";
 
 const vehicleCollection="Player"
 
+const MAGSCollection="MAGScoresheet"
+
+const WAGSCollection="WAGScoresheet"
+
 
 export default DB;
 export {
 	ObjectId,
 	userCollection,
-	vehicleCollection
+	vehicleCollection,
+	MAGSCollection,
+	WAGSCollection
 
 };

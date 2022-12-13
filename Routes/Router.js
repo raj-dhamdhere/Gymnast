@@ -7,10 +7,17 @@ import { vehicle} from "../controller/vehicle.js";
 import { summary} from "../controller/summary.js";
 import { drowsy} from "../controller/drowsy.js";
 import { startmaps} from "../controller/startmaps.js";
+import { MAGMaster} from "../controller/MAGMaster.js";
+import { WAGMaster} from "../controller/WAGMaster.js";
 
 /* USER MANAGEMENT */
 router.post("/api/registerUser", register);
 
+/* MAG MASTER */
+router.post("/api/MAGMaster", MAGMaster);
+
+/* WAG MASTER */
+router.post("/api/WAGMaster", WAGMaster);
 
 /* Vehicle Expenditure */
 router.post("/api/vehicleexpense", vehicle);

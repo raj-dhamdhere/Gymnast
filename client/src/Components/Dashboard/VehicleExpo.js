@@ -47,12 +47,12 @@ export default function Orders() {
 
   const Calculate = async (e) => {
     SetButtonCheck(true);
-    const check= ActualCalculate();
+    const check = ActualCalculate();
     Setchecking(check);
 
 
-    if(checking){
-
+    if (checking) {
+      //Normal Add To List
       let response = await axios.post(`${API_URL}/api/vehicleexpense`, {
 
         name: vname,
@@ -60,11 +60,11 @@ export default function Orders() {
         AgeGroup: Age,
         Sex: Sex,
         AddList: Yes,
-        District:District,
-        Discipline:Discipline
+        District: District,
+        Discipline: Discipline
       });
       console.log(response)
-      if(response.data.success == true){
+      if (response.data.success == true) {
         alert("Record Saved Successfully")
         SetVname("");
         SetVnum("");
@@ -74,10 +74,64 @@ export default function Orders() {
         SetDiscipline("");
         SetYes("");
         SetButtonCheck(false);
-      }else{
+      } else {
         alert("Record Saving Failed")
         SetButtonCheck(false);
       }
+
+      // Add To MAG and MAG Consolidated if Male 
+      if (Sex == "Male") {
+        let responseMag = await axios.post(`${API_URL}/api/MAGMaster`, {
+          name: vname,
+          AverageDED: "",
+          DAE: "",
+          DScore: "",
+          EMO: "",
+          EMT: "",
+          EMT4: "",
+          EMTR: "",
+          EScore: "",
+          FinalScore: "",
+          Penalty: "",
+          AddList: "",
+          AddList: Yes,
+          AgeGroup:Age,
+          District:District
+        });
+        console.log(responseMag)
+        if (responseMag.data.success == true) {
+          alert("Record MAG Saved Successfully")
+        } else {
+          alert("Record MAG Saving Failed")
+        }
+      } else { // Add To WAG and WAG Consolidated if Male 
+        let responseWag = await axios.post(`${API_URL}/api/WAGMaster`, {
+
+          name: vname,
+          AverageDED: "",
+          DAE: "",
+          DScore: "",
+          EMO: "",
+          EMT: "",
+          EMT4: "",
+          EMTR: "",
+          EScore: "",
+          FinalScore: "",
+          Penalty: "",
+          AddList: "",
+          AddList: Yes,
+          AgeGroup:Age,
+          District:District
+        });
+        console.log(responseWag)
+        if (responseWag.data.success == true) {
+          alert("Record WAG Saved Successfully")
+        } else {
+          alert("Record WAG Saving Failed")
+        }
+      }
+
+
     }
   }
 
