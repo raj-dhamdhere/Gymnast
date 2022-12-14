@@ -17,6 +17,10 @@ const MAGSCollection="MAGScoresheet"
 
 const WAGSCollection="WAGScoresheet"
 
+const MAGConsolidated="MAGConsolidated"
+
+const WAGConsolidated="WAGConsolidated"
+
 
 export default DB;
 export {
@@ -24,6 +28,8 @@ export {
 	userCollection,
 	vehicleCollection,
 	MAGSCollection,
-	WAGSCollection
+	WAGSCollection,
+	MAGConsolidated,
+	WAGConsolidated
 
 };

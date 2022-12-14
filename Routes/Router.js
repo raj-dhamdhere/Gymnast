@@ -9,15 +9,24 @@ import { drowsy} from "../controller/drowsy.js";
 import { startmaps} from "../controller/startmaps.js";
 import { MAGMaster} from "../controller/MAGMaster.js";
 import { WAGMaster} from "../controller/WAGMaster.js";
+import { MAGMasterConsole} from "../controller/MAGConsolidated.js";
+import { WAGMasterConsole} from "../controller/WAGConsolidated.js";
 
 /* USER MANAGEMENT */
 router.post("/api/registerUser", register);
 
-/* MAG MASTER */
+/* MAG MASTER Insert */
 router.post("/api/MAGMaster", MAGMaster);
 
-/* WAG MASTER */
+/* WAG MASTER  Insert */
 router.post("/api/WAGMaster", WAGMaster);
+
+/* MAG MASTER Consolidated */
+router.post("/api/MAGMasterConsolidated", MAGMasterConsole);
+
+/* WAG MASTER Consolidated */
+router.post("/api/WAGMasterConsolidated", WAGMasterConsole);
+
 
 /* Vehicle Expenditure */
 router.post("/api/vehicleexpense", vehicle);
