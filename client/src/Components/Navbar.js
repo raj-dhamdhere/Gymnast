@@ -8,14 +8,14 @@ export default function NavbarComponent() {
 	return (
 		<>
 			<Navbar bg="light" variant="light">
-						<Navbar.Brand href="#home">Travel</Navbar.Brand>
+						<Navbar.Brand href="#home">Gymnazium</Navbar.Brand>
 						<Nav className="mr-auto">
 							<Nav.Link href="/">Home</Nav.Link>
 							<Nav.Link href="/about">About Us</Nav.Link>
 							<Nav.Link href="/contact">Contact us</Nav.Link>
 							<Nav.Link href="/pricing">Pricing</Nav.Link>
 							<Nav.Link href="/login">Login</Nav.Link>
-							<Nav.Link href="/signup">Signup</Nav.Link>
+							{/* <Nav.Link href="/signup">Signup</Nav.Link> */}
 						</Nav>
 						<Form inline>
 							<FormControl

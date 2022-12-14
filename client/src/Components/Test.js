@@ -15,9 +15,9 @@ class Test extends React.Component {
 						data-aos="fade-in"
 						data-aos-delay="200"
 					>
-						<h1>Online Career Counselling System </h1>
+						<h1>Gymnazium</h1>
 						<h2>
-							We are team of individuals which provides a set of functionalities to make your Career Counselling memorable! :)						
+							We are team of individuals which provides a set of functionalities to make your Gymnast World memorable! :)						
 						</h2>
 					</div>
 				</section>
@@ -47,11 +47,11 @@ class Test extends React.Component {
 											</div>
 											<h4>
 												<a href={"/shortestrouteinfo"}>
-													Shortest Route
+													Player Registration
 												</a>
 											</h4>
 											<p>
-												Provides user the shortest route between their source and destination locations.{" "}
+												Provides Player to register themselves into the system.Happy Clients{" "}
 											</p>
 										</div>
 									</div>
@@ -67,12 +67,12 @@ class Test extends React.Component {
 											</div>
 											<h4>
 												<a href={"/drowsyinfo"}>
-													Drowsy Detection
+													MAG Worksheet
 												</a>
 											</h4>
 											<p>
 												{" "}
-												Monitor the driver activity and alerts whenever they seems to be drowsy or sleepy.{" "}
+												MAG Worksheet which provides men players list with specific filters{" "}
 											</p>
 										</div>
 									</div>
@@ -88,11 +88,11 @@ class Test extends React.Component {
 											</div>
 											<h4>
 												<a href={"/vehicleExinfo"}>
-													Vehicle Expenditure
+												WAG Worksheet
 												</a>
 											</h4>
 											<p>
-												Calculates the vehicle consumption and obtains the amount which comes under their transport category.
+											 WAG Worksheet which provides women players list with specific filters
 											</p>
 										</div>
 									</div>
@@ -108,10 +108,10 @@ class Test extends React.Component {
 											</div>
 											<h4>
 												<a href={"/stopinfo"}>
-													Essential Stop</a>
+													Consolidated Reports</a>
 											</h4>
 											<p>
-												This feature provides the essential stops which are present along the way during the road trip.
+												This feature provides the All Players List with specific filters.
 											</p>
 										</div>
 									</div>
@@ -283,7 +283,7 @@ class Test extends React.Component {
 										>
 											<div class="pic">
 												<img
-													src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png"
+													src="https://parentzone.org.uk/sites/default/files/Instagram%20logo.jpg"
 													class="img-fluid"
 													alt=""
 												/>
@@ -357,7 +357,7 @@ class Test extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Travel Everywhere</h3>
+										<h3>Gymnazium</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and

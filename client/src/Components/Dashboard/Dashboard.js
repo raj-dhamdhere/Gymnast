@@ -20,6 +20,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listitems';
 import shortest from "../../Information/Images/pune-mumbai-map.png"
+import Gymnast from "../../Information/Images/Gymnast.jpg"
 import drowsy from "../../Information/Images/Drowsy.jpg"
 import vehicle from "../../Information/Images/vehicle2.jpg"
 import summary from "../../Information/Images/summary.jpg"
@@ -31,7 +32,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Travel Applanner Website
+        Your Gymnasium Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -204,7 +205,7 @@ export default function Dashboard() {
                       {/* Vehicle Control */}
                       <Grid item xs={12}>
                        
-                        <img src={shortest} style={{width:"1200px",height:"600px"}} />
+                        <img src={Gymnast} style={{width:"1200px",height:"600px"}} />
                         
                         
                       </Grid>
