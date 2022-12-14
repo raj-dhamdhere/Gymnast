@@ -93,10 +93,9 @@ export default function Orders() {
           EScore: "",
           FinalScore: "",
           Penalty: "",
-          AddList: "",
           AddList: Yes,
-          AgeGroup:Age,
-          District:District
+          AgeGroup: Age,
+          District: District
         });
         console.log(responseMag)
         if (responseMag.data.success == true) {
@@ -104,7 +103,30 @@ export default function Orders() {
         } else {
           alert("Record MAG Saving Failed")
         }
-      } else { // Add To WAG and WAG Consolidated if Male 
+
+        let responseMagC = await axios.post(`${API_URL}/api/MAGMasterConsolidated`, {
+          name: vname,
+          Fx: "",
+          Hb: "",
+          Pb: "",
+          Ph: "",
+          Rank: "",
+          Sr: "",
+          Total: "",
+          Vt: "",
+          AddList: Yes,
+          AgeGroup: Age,
+          District: District
+        });
+
+        console.log(responseMagC)
+        if (responseMagC.data.success == true) {
+          alert("Record MAGC Saved Successfully")
+        } else {
+          alert("Record MAGC Saving Failed")
+        }
+
+      } else { // Add To WAG and WAG Consolidated if Female 
         let responseWag = await axios.post(`${API_URL}/api/WAGMaster`, {
 
           name: vname,
@@ -118,16 +140,36 @@ export default function Orders() {
           EScore: "",
           FinalScore: "",
           Penalty: "",
-          AddList: "",
           AddList: Yes,
-          AgeGroup:Age,
-          District:District
+          AgeGroup: Age,
+          District: District
         });
         console.log(responseWag)
         if (responseWag.data.success == true) {
           alert("Record WAG Saved Successfully")
         } else {
           alert("Record WAG Saving Failed")
+        }
+
+
+        let responseWagC = await axios.post(`${API_URL}/api/WAGMasterConsolidated`, {
+          name: vname,
+          Fx: "",
+          Rank: "",
+          Bb: "",
+          Total: "",
+          Ub:"",
+          Vt: "",
+          AddList: Yes,
+          AgeGroup: Age,
+          District: District
+        });
+
+        console.log(responseWagC)
+        if (responseWagC.data.success == true) {
+          alert("Record WAGC Saved Successfully")
+        } else {
+          alert("Record WAGC Saving Failed")
         }
       }
 

@@ -21,6 +21,8 @@ import VehicleControl from "./Components/Dashboard/VehicleControl.js"
 import SummaryControl from "./Components/Dashboard/SummaryControl.js"
 import DrowsyControl from "./Components/Dashboard/DrowsyControl.js"
 import ShortestControl from "./Components/Dashboard/ShortestControl.js"
+import MAGScoresheetcontrol from "./Components/Dashboard/MAGScoresheetcontrol.js"
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -48,6 +50,8 @@ class App extends React.Component {
 					<Route path="/SummaryControl" component ={SummaryControl} />
 					<Route path="/DrowsyControl" component ={DrowsyControl} />
 					<Route path="/ShortestControl" component ={ShortestControl} />
+					<Route path="/MAGScoresheetcontrol" component ={MAGScoresheetcontrol} />
+					
 				</div>
 			</Router>
 		);

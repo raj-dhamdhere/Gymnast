@@ -39,6 +39,17 @@ export const mainListItems = (
 
     <ListItem button>
       <ListItemIcon>
+        <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="MAGScoreSheet" onClick={()=>{
+        window.open("/MAGScoresheetcontrol", "_self");
+      }}/>
+    </ListItem>
+
+    
+
+    <ListItem button>
+      <ListItemIcon>
         <HowToReg />
       </ListItemIcon>
       <ListItemText primary="Player Registration" onClick={()=>{
