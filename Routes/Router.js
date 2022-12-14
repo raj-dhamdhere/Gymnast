@@ -38,10 +38,10 @@ router.get("/api/MAGMasterget", magmasterget);
 router.get("/api/WAGMasterget", wagmasterget);
 
 /* MAG MASTER Get Consolidated */
-router.post("/api/MAGMasterGetConsolidated", magmastergetconsole);
+router.get("/api/MAGMasterGetConsolidated", magmastergetconsole);
 
 /* WAG MASTER Get Consolidated */
-router.post("/api/WAGMasterGetConsolidated", wagmastergetconsole);
+router.get("/api/WAGMasterGetConsolidated", wagmastergetconsole);
 
 /* Vehicle Expenditure */
 router.post("/api/vehicleexpense", vehicle);

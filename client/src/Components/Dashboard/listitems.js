@@ -46,6 +46,33 @@ export const mainListItems = (
       }}/>
     </ListItem>
 
+    <ListItem button>
+      <ListItemIcon>
+        <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="WAGScoreSheet" onClick={()=>{
+        window.open("/WAGScoresheetcontrol", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="MAGConsolidated" onClick={()=>{
+        window.open("/MAGConsolidatedcontrol", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="WAGConsolidated" onClick={()=>{
+        window.open("/WAGConsolidatedcontrol", "_self");
+      }}/>
+    </ListItem>
+    
     
 
     <ListItem button>
