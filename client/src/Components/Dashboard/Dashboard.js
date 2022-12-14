@@ -203,9 +203,9 @@ export default function Dashboard() {
 
                       {/* Vehicle Control */}
                       <Grid item xs={12}>
-                        <Paper className={classes.paper}>
-                        <img src={shortest} style={{width:"500px",height:"500px"}} />
-                        </Paper>
+                       
+                        <img src={shortest} style={{width:"1200px",height:"600px"}} />
+                        
                         
                       </Grid>
                     </Grid>
