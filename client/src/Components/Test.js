@@ -15,7 +15,7 @@ class Test extends React.Component {
 						data-aos="fade-in"
 						data-aos-delay="200"
 					>
-						<h1>Gymnazium</h1>
+						<h1>Gymnazien</h1>
 						<h2>
 							We are team of individuals which provides a set of functionalities to make your Gymnast World memorable! :)						
 						</h2>
@@ -357,7 +357,7 @@ class Test extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Gymnazium</h3>
+										<h3>Gymnazien</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and
