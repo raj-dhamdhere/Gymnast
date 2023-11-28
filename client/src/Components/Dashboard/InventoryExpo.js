@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Orders() {
 
 
-  const [vname, SetVname] = useState([]);
-  const [vnum, SetVnum] = useState([]);
+  const [Quantity, SetQuantity] = useState([]);
+  const [BatchNo, SetBatchNo] = useState([]);
   const [distance, SetDistance] = useState([]);
-  const [Sex, SetSex] = useState([]);
-  const [Age, SetAgeG] = useState([]);
-  const [District, SetDistrict] = useState([]);
-  const [Discipline, SetDiscipline] = useState([]);
+  const [Manufacturer, SetManufacturer] = useState([]);
+  const [ItemName, SetItemName] = useState([]);
+  const [Quality, SetQuality] = useState([]);
+  const [Rate, SetRate] = useState([]);
   const [Yes, SetYes] = useState(true);
   const [No, SetNo] = useState(false);
   const [expense, SetExpense] = useState([]);
@@ -46,10 +46,7 @@ export default function Orders() {
   const aRef = useRef(null);
   const aRefa = useRef(null);
   
-  const courses = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli",
-  "Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","MumbaiCity","MumbaiSubUrban","Nagpur","Nanded","Nandurbar","Nashik",
-  "Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim"
-  ,"Yavatmal"]
+  const courses = ["Superior Quality","Medium Quality","Country Quality"]
 
   const classes = useStyles();
 
@@ -63,15 +60,15 @@ export default function Orders() {
     if (checking) {
       //Normal Add To List
       const formData = new FormData()
-      formData.append('name',vname) 
-      formData.append('dob',vnum) 
-      formData.append('AgeGroup',Age) 
-      formData.append('AddList',Yes) 
-      formData.append('District',District) 
-      formData.append('Discipline',Discipline) 
+      formData.append('Rate',Rate) 
+      formData.append('Quality',Quality) 
+      formData.append('ItemName',ItemName) 
+      formData.append('Manufacturer',Manufacturer) 
+      formData.append('BatchNo',BatchNo) 
+      formData.append('Quantity',Quantity) 
       formData.append('file',userInfo.file)   //Profile Image
       console.log(formData)
-      let response = await axios.post(`${API_URL}/api/vehicleexpense`, 
+      let response = await axios.post(`${API_URL}/api/InventoryAdd`, 
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -81,12 +78,12 @@ export default function Orders() {
       console.log(response)
       if (response.data.success == true) {
         alert("Record Saved Successfully")
-        SetVname("");
-        SetVnum("");
-        SetSex("");
-        SetAgeG("");
-        SetDistrict("");
-        SetDiscipline("");
+        SetRate("");
+        SetQuality("");
+        SetItemName("");
+        SetManufacturer("");
+        SetBatchNo("");
+        SetQuantity("");
         SetYes("");
         SetButtonCheck(false);
         SetuserInfo('');
@@ -98,99 +95,6 @@ export default function Orders() {
         SetButtonCheck(false);
       }
 
-      // Add To MAG and MAG Consolidated if Male 
-      if (Sex == "Male") {
-        let responseMag = await axios.post(`${API_URL}/api/MAGMaster`, {
-          name: vname,
-          AverageDED: "",
-          DAE: "",
-          DScore: "",
-          EMO: "",
-          EMT: "",
-          EMT4: "",
-          EMTR: "",
-          EScore: "",
-          FinalScore: "",
-          Penalty: "",
-          AddList: Yes,
-          AgeGroup: Age,
-          District: District
-        });
-        console.log(responseMag)
-        if (responseMag.data.success == true) {
-          //alert("Record MAG Saved Successfully")
-        } else {
-          alert("Record MAG Saving Failed")
-        }
-
-        let responseMagC = await axios.post(`${API_URL}/api/MAGMasterConsolidated`, {
-          name: vname,
-          Fx: "",
-          Hb: "",
-          Pb: "",
-          Ph: "",
-          Rank: "",
-          Sr: "",
-          Total: "",
-          Vt: "",
-          AddList: Yes,
-          AgeGroup: Age,
-          District: District
-        });
-
-        console.log(responseMagC)
-        if (responseMagC.data.success == true) {
-          //alert("Record MAGC Saved Successfully")
-        } else {
-          alert("Record MAGC Saving Failed")
-        }
-
-      } else { // Add To WAG and WAG Consolidated if Female 
-        let responseWag = await axios.post(`${API_URL}/api/WAGMaster`, {
-
-          name: vname,
-          AverageDED: "",
-          DAE: "",
-          DScore: "",
-          EMO: "",
-          EMT: "",
-          EMT4: "",
-          EMTR: "",
-          EScore: "",
-          FinalScore: "",
-          Penalty: "",
-          AddList: Yes,
-          AgeGroup: Age,
-          District: District
-        });
-        console.log(responseWag)
-        if (responseWag.data.success == true) {
-          // alert("Record WAG Saved Successfully")
-        } else {
-          alert("Record WAG Saving Failed")
-        }
-
-
-        let responseWagC = await axios.post(`${API_URL}/api/WAGMasterConsolidated`, {
-          name: vname,
-          Fx: "",
-          Rank: "",
-          Bb: "",
-          Total: "",
-          Ub:"",
-          Vt: "",
-          AddList: Yes,
-          AgeGroup: Age,
-          District: District
-        });
-
-        console.log(responseWagC)
-        if (responseWagC.data.success == true) {
-          // alert("Record WAGC Saved Successfully")
-        } else {
-          alert("Record WAGC Saving Failed")
-        }
-      }
 
 
     }
@@ -200,28 +104,28 @@ export default function Orders() {
 
      let isvalid = false
 
-    if(vname == ""){
-      alert("Please Fill Name");
+    if(Rate == ""){
+      alert("Please Fill Rate");
       return isvalid;
     }
-    else if(vnum == ""){
-      alert("Please Select DOB");
+    else if(Quality == ""){
+      alert("Please enter  Quality");
       return isvalid;
     }
-    else if(Age == ""){
-      alert("Please Select Age Group");
+    else if(ItemName == ""){
+      alert("Please Select ItemName");
       return isvalid;
     }
-    else if (Sex == ""){
-      alert("Please Select Sex");
+    else if (Manufacturer == ""){
+      alert("Please Select Manufacturer");
       return isvalid;
     }
-    else if(District == ""){
-      alert("Please Select District");
+    else if(BatchNo == ""){
+      alert("Please Select BatchNo");
       return isvalid;
     }
-    else if (Discipline == ""){
-      alert("Please Select Discipline");
+    else if (Quantity == ""){
+      alert("Please Select Quantity");
       return isvalid;
     }
     else if (Yes == ""){
@@ -262,7 +166,7 @@ export default function Orders() {
               className="section-title aos-init aos-animate"
               data-aos="fade-up"
             >
-              <h2>Player Registration</h2>
+              <h2>Inventory Add</h2>
             </div>
             <div>
               <div
@@ -272,71 +176,41 @@ export default function Orders() {
               >
                 <div className="php-email-form">
 
-                  <div className="row">
-                    <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Player's Name:</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Your Name:"
-                        required=""
-                        value={vname}
-                        onChange={(event) => {
-                          SetVname(event.target.value);
-                        }}
-                      />
-                    </div>
-
-                    <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>DOB :</label>
-                      <input
-                        type="date"
-                        className="form-control"
-                        placeholder="Enter DOB"
-                        required=""
-                        value={vnum}
-                        onChange={(event) => {
-                          SetVnum(event.target.value);
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="row">
+                <div className="row">
                     <div className="col-md-6 form-group">
-                      <label>Age Group</label>
+                      <label>Item Name</label>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         style={{width:"280px"}}
-                        value={Age}
-                        label="AgeGroup"
+                        value={ItemName}
+                        label="ItemName"
                         onChange={(event) => {
-                          SetAgeG(event.target.value);
+                            SetItemName(event.target.value);
                         }}
                       >
-                        <MenuItem value={"10"}>Under 10</MenuItem>
-                        <MenuItem value={"12"}>Under 12</MenuItem>
-                        <MenuItem value={"14"}>Under 14</MenuItem>
-                        <MenuItem value={"17"}>Under 17</MenuItem>
-                        <MenuItem value={"S"}>Seniors</MenuItem>
+                        <MenuItem value={"Cement"}>Cement</MenuItem>
+                        <MenuItem value={"SteelPipes"}>Steel Pipes</MenuItem>
+                        <MenuItem value={"WoodLogs"}>Wood Logs</MenuItem>
+                        <MenuItem value={"PVCPipes"}>PVC Pipes</MenuItem>
+                        <MenuItem value={"SideAngles"}>Side Angles</MenuItem>
                       </Select>
                     </div>
 
                     <div className="col-md-6 form-group">
-                      <label>Sex:</label><br></br>
+                      <label>Maufacturer:</label><br></br>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         style={{width:"280px"}}
-                        value={Sex}
-                        label="Sex"
+                        value={Manufacturer}
+                        label="Manufacturer"
                         onChange={(event) => {
-                          SetSex(event.target.value);
+                          SetManufacturer(event.target.value);
                         }}
                       >
-                        <MenuItem value={"Male"}>Male</MenuItem>
-                        <MenuItem value={"Female"}>Female</MenuItem>
+                        <MenuItem value={"Tata"}>Tata</MenuItem>
+                        <MenuItem value={"Reliance"}>Reliance</MenuItem>
                         <MenuItem value={"Others"}>Others</MenuItem>
                       </Select>
                     </div>
@@ -346,18 +220,47 @@ export default function Orders() {
 
                   </div>
 
+                  <div className="row">
+                    <div className="col-md-6 form-group mt-3 mt-md-0">
+                      <label>Item Quantity:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Your Quantity:"
+                        required=""
+                        value={Quantity}
+                        onChange={(event) => {
+                          SetQuantity(event.target.value);
+                        }}
+                      />
+                    </div>
+
+                    <div className="col-md-6 form-group mt-3 mt-md-0">
+                      <label>Batch No :</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Batch No"
+                        required=""
+                        value={BatchNo}
+                        onChange={(event) => {
+                          SetBatchNo(event.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
 
                   <div className="row">
                     <div className="col-md-6 form-group">
-                      <label>District</label><br></br>
+                      <label>Quality</label><br></br>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         style={{width:"280px"}}
-                        value={District}
-                        label="District"
+                        value={Quality}
+                        label="Quality"
                         onChange={(event) => {
-                          SetDistrict(event.target.value);
+                            SetQuality(event.target.value);
                         }}
                       >
                         {courses.map((course, index) => {
@@ -368,25 +271,18 @@ export default function Orders() {
                       </Select>
                     </div>
 
-                    <div className="col-md-6 form-group">
-                      <label>Gymnastics Discipline:</label>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        style={{width:"280px"}}
-                        value={Discipline}
-                        label="Discipline"
+                    <div className="col-md-6 form-group mt-3 mt-md-0">
+                      <label>Rate:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Rate"
+                        required=""
+                        value={Rate}
                         onChange={(event) => {
-                          SetDiscipline(event.target.value);
+                          SetRate(event.target.value);
                         }}
-                      >
-                        <MenuItem value={"Artistic"}>Artistic</MenuItem>
-                        <MenuItem value={"Rythmic"}>Rythmic</MenuItem>
-                        <MenuItem value={"Aerobic"}>Aerobic</MenuItem>
-                        <MenuItem value={"Acrobatic"}>Acrobatic</MenuItem>
-                        <MenuItem value={"TAT"}>Tumbling and Trampoline</MenuItem>
-                        <MenuItem value={"Parckour"}>Parckour</MenuItem>
-                      </Select>
+                      />
                     </div>
 
                   
@@ -395,7 +291,7 @@ export default function Orders() {
 
                   <div className="row">
                     <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <label>Add To List</label>
+                      <label>Add To Inventory</label>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -459,7 +355,7 @@ export default function Orders() {
                       Calculate();
                     }}
                   >
-                    Register
+                    Add Stock
                     </button>
 
                 </div>

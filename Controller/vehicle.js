@@ -3,7 +3,7 @@ import Vehicle from "../modules/vehicle.js";
 
 async function vehicle(req, res) {
 	try {
-		new Vehicle().vehicleadd(req.body);
+		new Vehicle().vehicleadd(req.body,req.file);
 		res.send({ success: true, message: "Vehicle Details Added  Successfully" });
 	} catch (e) {
 		res.send({ success: false, error: e.toString() });

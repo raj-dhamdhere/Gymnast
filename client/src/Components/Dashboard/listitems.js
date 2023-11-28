@@ -27,8 +27,43 @@ export const mainListItems = (
       }}/>
     </ListItem>
 
-      
     <ListItem button>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Inventory Add" onClick={()=>{
+        window.open("/InventoryControl", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="Inventory Summary" onClick={()=>{
+        window.open("/InventorySummaryControl", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Item Sell" onClick={()=>{
+        window.open("/InventoryControl", "_self");
+      }}/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Revenue Count" onClick={()=>{
+        window.open("/InventoryControl", "_self");
+      }}/>
+    </ListItem>
+      
+    {/* <ListItem button>
       <ListItemIcon>
         <AccountBalanceWalletIcon />
       </ListItemIcon>
@@ -104,12 +139,23 @@ export const mainListItems = (
 
     <ListItem button>
       <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Inventory Add" onClick={()=>{
+        window.open("/InventoryControl", "_self");
+      }}/>
+    </ListItem> */}
+
+    <ListItem button>
+      <ListItemIcon>
         <ExitToAppIcon />
       </ListItemIcon>
       <ListItemText primary="Logout" onClick={()=>{
         window.open("/login", "_self");
       }}/>
     </ListItem>
+
+    
 
     
 

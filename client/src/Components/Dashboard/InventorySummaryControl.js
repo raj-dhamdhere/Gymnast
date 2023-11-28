@@ -19,21 +19,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listitems';
-import shortest from "../../Information/Images/pune-mumbai-map.png"
-import Gymnast from "../../Information/Images/Gymnast.jpg"
-import drowsy from "../../Information/Images/Drowsy.jpg"
-import vehicle from "../../Information/Images/vehicle2.jpg"
-import summary from "../../Information/Images/summary.jpg"
-import user from "../../Information/Images/user.jpeg"
-import barcode from "../../Information/Images/barcode.jpg"
-import Inventory from "../../Information/Images/Inventory.jpg"
+import InventorySummary from './InventorySummary';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Gymnasium Website
+        Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -176,70 +169,20 @@ export default function Dashboard() {
             </Drawer>
             <main className={classes.content}>
                   <div className={classes.appBarSpacer} />
-                  {/* <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={5}>
-                     
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                          <img src={shortest} style={{width:"350px"}} />
-                        </Paper>
-                      </Grid>
-                  
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                        <img src={drowsy} style={{width:"250px" }} />
-                        </Paper>
-                      </Grid>
-                      
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                        <img src={vehicle} style={{width:"350px" ,height:"200px"}} />
-                        </Paper>
-                      </Grid>
-                    </Grid>
-                    
-                  </Container> */}
-
                   <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
-
+                    
                       {/* Vehicle Control */}
                       <Grid item xs={12}>
-                       
-                        <img src={Inventory} style={{width:"700px",height:"400px"}} />
-                        
-                        
+                        <Paper className={classes.paper}>
+                          <InventorySummary />
+                        </Paper>
                       </Grid>
                     </Grid>
                     <Box pt={4}>
                       <Copyright />
                     </Box>
                   </Container>
-                  {/* <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={5}>
-                     
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                        <img src={summary} style={{width:"350px" ,height:"200px"} } />
-                        </Paper>
-                      </Grid>
-                  
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                        <img src={user} style={{width:"350px" ,height:"200px"} } />
-                        </Paper>
-                      </Grid>
-                      
-                      <Grid item xs={4} >
-                        <Paper className={fixedHeightPaper}>
-                        <img src={barcode} style={{width:"350px" ,height:"200px"} } />
-                        </Paper>
-                      </Grid>
-                    </Grid>
-                    <Box pt={4}>
-                      <Copyright />
-                    </Box>
-                  </Container> */}
             </main>
     </div>
   );

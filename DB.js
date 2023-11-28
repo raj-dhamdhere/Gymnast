@@ -13,6 +13,8 @@ const userCollection = "User";
 
 const vehicleCollection="Player"
 
+const InventoryCollection = "InventoryCollection"
+
 const MAGSCollection="MAGScoresheet"
 
 const WAGSCollection="WAGScoresheet"
@@ -30,6 +32,7 @@ export {
 	MAGSCollection,
 	WAGSCollection,
 	MAGConsolidated,
-	WAGConsolidated
+	WAGConsolidated,
+	InventoryCollection
 
 };

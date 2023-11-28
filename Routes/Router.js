@@ -1,10 +1,13 @@
 import express from "express";
 const router = express.Router();
-
+import multer from "multer";
+const upload = multer({ dest: 'uploads/' })
 
 import { register,loginUser } from "../controller/user.js";
 import { vehicle} from "../controller/vehicle.js";
+import { InventoryAdd} from "../controller/InventoryAdd.js";
 import { summary} from "../controller/summary.js";
+import { InventorySummary} from "../controller/InventorySummary.js";
 import { drowsy} from "../controller/drowsy.js";
 import { startmaps} from "../controller/startmaps.js";
 import { MAGMaster} from "../controller/MAGMaster.js";
@@ -44,10 +47,16 @@ router.get("/api/MAGMasterGetConsolidated", magmastergetconsole);
 router.get("/api/WAGMasterGetConsolidated", wagmastergetconsole);
 
 /* Vehicle Expenditure */
-router.post("/api/vehicleexpense", vehicle);
+router.post("/api/vehicleexpense",upload.single('file'), vehicle);
+
+/* Inventory Add */
+router.post("/api/InventoryAdd",upload.single('file'), InventoryAdd);
 
 /* Summary Get APi */
 router.get("/api/Summary", summary);
+
+/* Summary Get APi */
+router.get("/api/InventorySummary", InventorySummary);
 
 /* Drowsy Detect */
 router.post("/api/drowsy", drowsy);

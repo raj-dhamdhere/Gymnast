@@ -1,5 +1,6 @@
 import express, { json, urlencoded } from "express";
 
+
 const app = express();
 app.use(json());
 app.use(urlencoded({ extended: true }));
@@ -7,6 +8,9 @@ app.use(urlencoded({ extended: true }));
 import cors from "cors";
 app.use(cors());
 
+import bodyParser from "body-parser";
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
 app.use(express.static(path.join(path.resolve(), "public/build")));
 
