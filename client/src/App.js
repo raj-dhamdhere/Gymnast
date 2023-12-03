@@ -27,7 +27,8 @@ import MAGConsolidatedcontrol from "./Components/Dashboard/MAGConsolidatedcontro
 import WAGConsolidatedcontrol from "./Components/Dashboard/WAGConsolidatedcontrol.js"
 import InventoryControl from "./Components/Dashboard/InventoryControl.js"
 import InventorySummaryControl from "./Components/Dashboard/InventorySummaryControl.js"
-
+import itemsellControl from "./Components/Dashboard/itemsellControl.js"
+import RevenueControl from "./Components/Dashboard/RevenueControl.js"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -60,7 +61,9 @@ class App extends React.Component {
 					<Route path="/MAGConsolidatedcontrol" component ={MAGConsolidatedcontrol} />
 					<Route path="/WAGConsolidatedcontrol" component ={WAGConsolidatedcontrol} />
 					<Route path="/InventoryControl" component ={InventoryControl} />
-					<Route path="/InventorySummaryControl" component ={InventorySummaryControl} />
+					<Route path="/InventorySummaryControl" component={InventorySummaryControl} />
+					<Route path="/itemsellControl" component={itemsellControl} />
+					<Route path="/RevenueControl" component={RevenueControl} />
 				</div>
 			</Router>
 		);

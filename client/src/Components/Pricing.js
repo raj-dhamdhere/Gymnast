@@ -17,11 +17,9 @@ class About extends React.Component {
 								data-aos="fade-right"
 							>
 								<div class="content">
-									<h3>Why Travel Everywhere</h3>
+									<h3>Construction Inventory</h3>
 									<p>
-										Travel Everywhere is India's No. 1
-										trip planner site that delivers next
-										generation instant management.
+										Construction Inventory 
 									</p>
 									<div class="text-center">
 										<a href={"/pricing"} class="more-btn">
@@ -159,7 +157,7 @@ class About extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Gurukrupa EnterPrises</h3>
+										<h3>Construction Inventory</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and
@@ -282,7 +280,7 @@ class About extends React.Component {
 						<div className="copyright">
 							&copy; Copyright{" "}
 							<strong>
-								<span>Travel Everywhere</span>
+								<span>Construction Inventory</span>
 							</strong>
 							. All Rights Reserved
 						</div>

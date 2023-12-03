@@ -8,7 +8,7 @@ export default function NavbarComponent() {
 	return (
 		<>
 			<Navbar bg="light" variant="light">
-						<Navbar.Brand href="#home">Gymnazien</Navbar.Brand>
+						<Navbar.Brand href="#home">Construction Inventory</Navbar.Brand>
 						<Nav className="mr-auto">
 							<Nav.Link href="/">Home</Nav.Link>
 							<Nav.Link href="/about">About Us</Nav.Link>

@@ -5,8 +5,11 @@ const upload = multer({ dest: 'uploads/' })
 
 import { register,loginUser } from "../controller/user.js";
 import { vehicle} from "../controller/vehicle.js";
-import { InventoryAdd} from "../controller/InventoryAdd.js";
-import { summary} from "../controller/summary.js";
+import { InventoryAdd } from "../controller/InventoryAdd.js";
+import { ItemSell } from "../controller/ItemSell.js";
+import { RevenueCount } from "../controller/RevenueCount.js";
+import { summary } from "../controller/summary.js";
+import { RevenueSummary } from "../controller/RevenueSummary.js";
 import { InventorySummary} from "../controller/InventorySummary.js";
 import { drowsy} from "../controller/drowsy.js";
 import { startmaps} from "../controller/startmaps.js";
@@ -52,11 +55,20 @@ router.post("/api/vehicleexpense",upload.single('file'), vehicle);
 /* Inventory Add */
 router.post("/api/InventoryAdd",upload.single('file'), InventoryAdd);
 
+/* Item Sell Add */
+router.post("/api/ItemSell", upload.single('file'),ItemSell);
+
+/* Revenue Count */
+router.post("/api/RevenueCount", upload.single('file'),RevenueCount);
+
 /* Summary Get APi */
 router.get("/api/Summary", summary);
 
-/* Summary Get APi */
+/* Inevntory Summary Get APi */
 router.get("/api/InventorySummary", InventorySummary);
+
+/* revenue Get APi */
+router.get("/api/RevenueSummary", RevenueSummary);
 
 /* Drowsy Detect */
 router.post("/api/drowsy", drowsy);

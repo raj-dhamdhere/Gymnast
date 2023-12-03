@@ -13,10 +13,10 @@ class About extends React.Component {
 					className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5 aos-init aos-animate"
 					data-aos="fade-left"
 				>
-					<h3>Travel Everywhere</h3>
+					<h3>Construction Inventory</h3>
 					<p>
-						Travel Everywhere is a road-trip management site
-						that delivers full fledged travel management and make consumer's trip memorable.
+						Construction Inventoryis a Inventory Management System
+						that delivers full fledged Inventory Management System.
 					</p>
 
 					<div
@@ -80,7 +80,7 @@ class About extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-									<h3>Travel Everywhere</h3>
+										<h3>Construction Inventory</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and

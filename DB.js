@@ -23,6 +23,9 @@ const MAGConsolidated="MAGConsolidated"
 
 const WAGConsolidated="WAGConsolidated"
 
+const ItemSellCollection = "ItemSell"
+
+const RevenueCount = "RevenueCount"
 
 export default DB;
 export {
@@ -33,6 +36,8 @@ export {
 	WAGSCollection,
 	MAGConsolidated,
 	WAGConsolidated,
-	InventoryCollection
+	InventoryCollection,
+	ItemSellCollection,
+	RevenueCount
 
 };

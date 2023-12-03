@@ -50,7 +50,7 @@ export const mainListItems = (
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Item Sell" onClick={()=>{
-        window.open("/InventoryControl", "_self");
+        window.open("/itemsellControl", "_self");
       }}/>
     </ListItem>
 
@@ -59,7 +59,7 @@ export const mainListItems = (
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Revenue Count" onClick={()=>{
-        window.open("/InventoryControl", "_self");
+                window.open("/RevenueControl", "_self");
       }}/>
     </ListItem>
       

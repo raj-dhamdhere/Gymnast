@@ -1,25 +1,25 @@
-import db, {  InventoryCollection} from "../DB.js";
+import db, { RevenueCount } from "../DB.js";
 
 
 
-class InventorySummaryx {
-	constructor() {}
+class RevenueSummaryx {
+    constructor() { }
 
-	async summary() {
+    async summary() {
         let data = await db
-			.collection(InventoryCollection)
+            .collection(RevenueCount)
             .find()
             .toArray();
-        
+
 
         let returnData = {
-            information:data
+            information: data
         }
-        
-    return returnData;
 
-		
-	
+        return returnData;
+
+
+
     }
 
     //async Calculate() {
@@ -36,7 +36,7 @@ class InventorySummaryx {
     //    }
     //}
 
-	
+
 }
 
-export default InventorySummaryx;
+export default RevenueSummaryx;

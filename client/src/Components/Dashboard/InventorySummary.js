@@ -57,8 +57,9 @@ export default function Summary() {
     { dataField: "ItemName", text: "ItemName", sort: true, filter: textFilter(), footer: "", editable: false},
     { dataField: "Manufacturer", text: "Manufacturer", sort: true, filter: textFilter(), footer: "",editable: false },
     { dataField: "BatchNo", text: "BatchNo", sort: true, filter: textFilter(), footer: "", editable: false},
-    { dataField: "Quantity", text: "Quantity", sort: true, filter: textFilter(), footer: "", editable: false},
-    { dataField: "AddList", text: "AddList", sort: true, filter: textFilter(), footer: "", },
+      { dataField: "Quantity", text: "Quantity", sort: true, filter: textFilter(), footer: "", editable: false }
+      
+/*    ,{ dataField: "AddList", text: "AddList", sort: true, filter: textFilter(), footer: "", },*/
   ];
   const defaultSorted = [
     {
