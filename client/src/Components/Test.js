@@ -46,12 +46,10 @@ class Test extends React.Component {
 												<i class="bx bx-world"></i>
 											</div>
 											<h4>
-												<a href={"/shortestrouteinfo"}>
-													Player Registration
-												</a>
+												Inventory add
 											</h4>
 											<p>
-												Provides Player to register themselves into the system.Happy Clients{" "}
+												Provides User to Add the Stock in Inventory{" "}
 											</p>
 										</div>
 									</div>
@@ -66,13 +64,11 @@ class Test extends React.Component {
 												<i class="bx bx-file"></i>
 											</div>
 											<h4>
-												<a href={"/drowsyinfo"}>
-													MAG Worksheet
-												</a>
+												Inventory Summary
 											</h4>
 											<p>
 												{" "}
-												MAG Worksheet which provides men players list with specific filters{" "}
+												Enables User to View the Summary of Inventory{" "}
 											</p>
 										</div>
 									</div>
@@ -87,12 +83,12 @@ class Test extends React.Component {
 												<i class="bx bx-tachometer"></i>
 											</div>
 											<h4>
-												<a href={"/vehicleExinfo"}>
-												WAG Worksheet
-												</a>
+												
+												Item Sell
+												
 											</h4>
 											<p>
-											 WAG Worksheet which provides women players list with specific filters
+											 Enables User to sell the items From Inventory
 											</p>
 										</div>
 									</div>
@@ -107,11 +103,11 @@ class Test extends React.Component {
 												<i class="bx bx-world"></i>
 											</div>
 											<h4>
-												<a href={"/stopinfo"}>
-													Consolidated Reports</a>
+												
+												Revenue Count
 											</h4>
 											<p>
-												This feature provides the All Players List with specific filters.
+											Enables the user to view the generated Revenue
 											</p>
 										</div>
 									</div>
