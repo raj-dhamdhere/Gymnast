@@ -15,7 +15,7 @@ class Test extends React.Component {
 						data-aos="fade-in"
 						data-aos-delay="200"
 					>
-						<h1>Construction Inventory</h1>
+						<h1>Gymnazien</h1>
 						<h2>
 							We are team of individuals which provides a set of functionalities to make your Gymnast World memorable! :)						
 						</h2>
@@ -46,10 +46,12 @@ class Test extends React.Component {
 												<i class="bx bx-world"></i>
 											</div>
 											<h4>
-												Inventory add
+												<a href={"/shortestrouteinfo"}>
+													Player Registration
+												</a>
 											</h4>
 											<p>
-												Provides User to Add the Stock in Inventory{" "}
+												Provides Player to register themselves into the system.Happy Clients{" "}
 											</p>
 										</div>
 									</div>
@@ -64,11 +66,13 @@ class Test extends React.Component {
 												<i class="bx bx-file"></i>
 											</div>
 											<h4>
-												Inventory Summary
+												<a href={"/drowsyinfo"}>
+													MAG Worksheet
+												</a>
 											</h4>
 											<p>
 												{" "}
-												Enables User to View the Summary of Inventory{" "}
+												MAG Worksheet which provides men players list with specific filters{" "}
 											</p>
 										</div>
 									</div>
@@ -83,12 +87,12 @@ class Test extends React.Component {
 												<i class="bx bx-tachometer"></i>
 											</div>
 											<h4>
-												
-												Item Sell
-												
+												<a href={"/vehicleExinfo"}>
+												WAG Worksheet
+												</a>
 											</h4>
 											<p>
-											 Enables User to sell the items From Inventory
+											 WAG Worksheet which provides women players list with specific filters
 											</p>
 										</div>
 									</div>
@@ -103,11 +107,11 @@ class Test extends React.Component {
 												<i class="bx bx-world"></i>
 											</div>
 											<h4>
-												
-												Revenue Count
+												<a href={"/stopinfo"}>
+													Consolidated Reports</a>
 											</h4>
 											<p>
-											Enables the user to view the generated Revenue
+												This feature provides the All Players List with specific filters.
 											</p>
 										</div>
 									</div>
@@ -353,7 +357,7 @@ class Test extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Construction Inventory</h3>
+										<h3>Gymnazien</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and
@@ -475,7 +479,7 @@ class Test extends React.Component {
 						<div className="copyright">
 							&copy; Copyright{" "}
 							<strong>
-								<span>Construction Inventory</span>
+								<span>Travel Everywhere</span>
 							</strong>
 							. All Rights Reserved
 						</div>

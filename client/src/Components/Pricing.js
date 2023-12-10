@@ -17,9 +17,9 @@ class About extends React.Component {
 								data-aos="fade-right"
 							>
 								<div class="content">
-									<h3>Construction Inventory</h3>
+									<h3>Gymnazien</h3>
 									<p>
-										Construction Inventory 
+										Gymnazien 
 									</p>
 									<div class="text-center">
 										<a href={"/pricing"} class="more-btn">
@@ -39,9 +39,9 @@ class About extends React.Component {
 										>
 											<div class="icon-box mt-4 mt-xl-0">
 												<i class="bx bx-receipt"></i>
-												<h4>Shortest Route</h4>
+												<h4>Player Registration</h4>
 												<p>
-												Provides user the shortest route between their source and destination locations
+												Provides Player to register themselves into the system.Happy Clients{" "}
 												</p>
 											</div>
 										</div>
@@ -52,9 +52,9 @@ class About extends React.Component {
 										>
 											<div class="icon-box mt-4 mt-xl-0">
 												<i class="bx bx-cube-alt"></i>
-												<h4>Drowsy Detection</h4>
+												<h4>MAG Worksheet</h4>
 												<p>
-												Monitor the driver activity and alerts whenever they seems to be drowsy or sleepy.
+												MAG Worksheet which provides men players list with specific filters{" "}
 												</p>
 											</div>
 										</div>
@@ -65,9 +65,9 @@ class About extends React.Component {
 										>
 											<div class="icon-box mt-4 mt-xl-0">
 												<i class="bx bx-images"></i>
-												<h4>Vehicle Expenditure</h4>
+												<h4>Consolidated Reports</h4>
 												<p>
-												Calculates the vehicle consumption and obtains the amount which comes under their transport category.
+												This feature provides the All Players List with specific filters.
 												</p>
 											</div>
 										</div>
@@ -157,7 +157,7 @@ class About extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Construction Inventory</h3>
+										<h3>Gymnazien</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and
@@ -280,7 +280,7 @@ class About extends React.Component {
 						<div className="copyright">
 							&copy; Copyright{" "}
 							<strong>
-								<span>Construction Inventory</span>
+								<span>Gymnazien</span>
 							</strong>
 							. All Rights Reserved
 						</div>

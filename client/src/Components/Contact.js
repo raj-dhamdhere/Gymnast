@@ -121,7 +121,7 @@ class About extends React.Component {
 							<div className="row">
 								<div className="col-lg-4 col-md-6">
 									<div className="footer-info">
-										<h3>Construction Inventory</h3>
+										<h3>Gymnazien</h3>
 										<p className="pb-3">
 											<em>
 												All in One Services Platform and
@@ -243,7 +243,7 @@ class About extends React.Component {
 						<div className="copyright">
 							&copy; Copyright{" "}
 							<strong>
-								<span>Construction Inventory</span>
+								<span>Gymnazien</span>
 							</strong>
 							. All Rights Reserved
 						</div>

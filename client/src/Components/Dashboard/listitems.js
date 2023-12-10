@@ -27,7 +27,7 @@ export const mainListItems = (
       }}/>
     </ListItem>
 
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
@@ -61,9 +61,9 @@ export const mainListItems = (
       <ListItemText primary="Revenue Count" onClick={()=>{
                 window.open("/RevenueControl", "_self");
       }}/>
-    </ListItem>
+    </ListItem> */}
       
-    {/* <ListItem button>
+    <ListItem button>
       <ListItemIcon>
         <AccountBalanceWalletIcon />
       </ListItemIcon>
@@ -137,7 +137,7 @@ export const mainListItems = (
       }}/>
     </ListItem>
 
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>

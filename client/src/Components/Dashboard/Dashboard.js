@@ -206,7 +206,7 @@ export default function Dashboard() {
                       {/* Vehicle Control */}
                       <Grid item xs={12}>
                        
-                        <img src={Inventory} style={{width:"700px",height:"400px"}} />
+                        <img src={Gymnast} style={{width:"700px",height:"400px"}} />
                         
                         
                       </Grid>
