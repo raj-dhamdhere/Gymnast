@@ -10,6 +10,7 @@ import { ItemSell } from "../controller/ItemSell.js";
 import { RevenueCount } from "../controller/RevenueCount.js";
 import { summary } from "../controller/summary.js";
 import { RevenueSummary } from "../controller/RevenueSummary.js";
+import { Faq } from "../controller/faq.js";
 import { InventorySummary} from "../controller/InventorySummary.js";
 import { drowsy} from "../controller/drowsy.js";
 import { startmaps} from "../controller/startmaps.js";
@@ -69,6 +70,9 @@ router.get("/api/InventorySummary", InventorySummary);
 
 /* revenue Get APi */
 router.get("/api/RevenueSummary", RevenueSummary);
+
+/* FAQ Get APi */
+router.get("/api/Faq", Faq);
 
 /* Drowsy Detect */
 router.post("/api/drowsy", drowsy);

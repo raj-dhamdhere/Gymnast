@@ -27,6 +27,18 @@ const ItemSellCollection = "ItemSell"
 
 const RevenueCount = "RevenueCount"
 
+const ArtificialIntelligence = "ArtificialIntelligence"
+
+const CloudComputing = "CloudComputing"
+
+const Contract = "Contract"
+
+const DataScience = "DataScience"
+
+const Industry = "Industry"
+
+const MachineLearning = "MachineLearning"
+
 export default DB;
 export {
 	ObjectId,
@@ -38,6 +50,12 @@ export {
 	WAGConsolidated,
 	InventoryCollection,
 	ItemSellCollection,
-	RevenueCount
+	RevenueCount,
+	ArtificialIntelligence,
+	CloudComputing,
+	Contract,
+	DataScience,
+	Industry,
+	MachineLearning
 
 };
