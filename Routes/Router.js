@@ -72,7 +72,7 @@ router.get("/api/InventorySummary", InventorySummary);
 router.get("/api/RevenueSummary", RevenueSummary);
 
 /* FAQ Get APi */
-router.get("/api/Faq", Faq);
+router.post("/api/Faq", Faq);
 
 /* Drowsy Detect */
 router.post("/api/drowsy", drowsy);

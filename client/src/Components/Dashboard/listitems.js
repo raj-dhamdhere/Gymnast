@@ -63,7 +63,7 @@ export const mainListItems = (
       }}/>
     </ListItem> */}
       
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <AccountBalanceWalletIcon />
       </ListItemIcon>
@@ -126,14 +126,23 @@ export const mainListItems = (
       <ListItemText primary="Add To List" onClick={()=>{
         window.open("/SummaryControl", "_self");
       }}/>
-    </ListItem>
+    </ListItem> */}
 
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <SportsCricket />
       </ListItemIcon>
       <ListItemText primary="Competition Master" onClick={()=>{
         window.open("/ShortestControl", "_self");
+      }}/>
+    </ListItem> */}
+
+    <ListItem button>
+      <ListItemIcon>
+      <AccountBalanceWalletIcon />
+      </ListItemIcon>
+      <ListItemText primary="FAQ" onClick={()=>{
+        window.open("/FaqApi", "_self");
       }}/>
     </ListItem>
 

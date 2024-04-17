@@ -29,6 +29,7 @@ import InventoryControl from "./Components/Dashboard/InventoryControl.js"
 import InventorySummaryControl from "./Components/Dashboard/InventorySummaryControl.js"
 import itemsellControl from "./Components/Dashboard/itemsellControl.js"
 import RevenueControl from "./Components/Dashboard/RevenueControl.js"
+import FaqControl from "./Components/Dashboard/FaqControl.js"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -53,6 +54,7 @@ class App extends React.Component {
 					<Route path="/stopinfo"component={Stopinfo} />
 					<Route path="/dashboard"component={Dashboard} />
 					<Route path="/VehicleControl" component ={VehicleControl} />
+					<Route path="/FaqApi" component ={FaqControl} />
 					<Route path="/SummaryControl" component ={SummaryControl} />
 					<Route path="/DrowsyControl" component ={DrowsyControl} />
 					<Route path="/ShortestControl" component ={ShortestControl} />
